@@ -1,0 +1,18 @@
+VOCE UFFICIALE DI EDWIN ARC (approvata da Davide il 27/10/2026)
+
+Motore: Kokoro v1.0 (onnx), licenza Apache 2.0, gira in locale
+  modello: github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+  voci:    github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+  fonemi:  libespeak-ng + espeak-ng-data da github.com/rhasspy/piper/releases (piper_linux_x86_64.tar.gz)
+  vocab:   kokoro-onnx/src/kokoro_onnx/config.json
+
+Voce:      miscela "im_nicola:0.75+if_sara:0.25"
+Velocità:  1.05
+Pausa tra blocchi: 0.12 s
+Effetti:   nessuno (niente timbro da automa, niente cambio di tono)
+Generazione: blocchi lunghi fino a ~480 fonemi, intonazione continua
+Correzioni fonetiche: ʊ->u, ɪ->i; affricate come suono unico (tʃ->ʧ, dʒ->ʤ, ts->ʦ, dz->ʣ)
+Lessico: Edwin Arc -> Èduin Ark; IA -> i a; 1889 -> milleottocentottantanòve
+Post-produzione: aresample 44100, silenceremove iniziale, loudnorm I=-16
+
+Script: voce_neurale.py
