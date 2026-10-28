@@ -13,6 +13,16 @@ Effetti:   nessuno (niente timbro da automa, niente cambio di tono)
 Generazione: blocchi lunghi fino a ~480 fonemi, intonazione continua
 Correzioni fonetiche: ʊ->u, ɪ->i; affricate come suono unico (tʃ->ʧ, dʒ->ʤ, ts->ʦ, dz->ʣ)
 Lessico: Edwin Arc -> Èduin Ark; IA -> i a; 1889 -> milleottocentottantanòve
+Fonemi corretti a mano: seguimi -> sˈeɡuimi (non "seg-wimi"); automi resta autòmi (scelta di Davide)
+
+REGOLE DI SCRITTURA DEI TESTI (Reel 2, 28/10/2026)
+- Niente punti esclamativi: creano "aah" strascicati a fine parola. Enfasi solo con virgole e punti.
+- Niente puntini di sospensione e niente frasi spezzate a metà: fanno la cantilena e l'effetto ansimante.
+- Le frasi corte NON vanno generate da sole: ogni scena si genera come un'unica battuta (più frasi insieme).
+- Pause tra frasi: 0.35 s dentro la scena, 0.6 s tra le scene (di più sembra lento e sforzato).
+- Pause dentro una battuta: si allunga di 0.14-0.22 s il silenzio che il modello lascia già tra due frasi
+  (posizione trovata misurando l'audio, mai stimata dal testo). Vedi PAUSE_DOPO in reel2/voce_reel2.py.
+- "Dimmi, più corta" con la virgola, non i due punti.
 Post-produzione: aresample 44100, silenceremove iniziale, loudnorm I=-16
 
 Script: voce_neurale.py

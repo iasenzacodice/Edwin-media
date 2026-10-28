@@ -34,6 +34,9 @@ def ipa(chunk):
 # parole da pronunciare in modo speciale (nomi stranieri, sigle)
 LESSICO = {'Edwin Arc': 'Èduin Ark', 'Edwin': 'Èduin', 'Arc': 'Ark', 'IA': 'i a', "l'IA": "l'i a", '1889': 'milleottocentottantanòve'}
 
+# correzioni dirette sui fonemi (dopo espeak)
+FONEMI = {'sˈeɡwimi': 'sˈeɡuimi'}
+
 def phonemize(text):
     for k, v in sorted(LESSICO.items(), key=lambda kv: -len(kv[0])):
         text = re.sub(r'(?<!\w)' + re.escape(k) + r'(?!\w)', v, text)
@@ -50,6 +53,8 @@ def phonemize(text):
     # affricate come un solo suono (evita la 't' in più, es. artifi-T-ciale)
     for a, b in (('tʃ', 'ʧ'), ('dʒ', 'ʤ'), ('ts', 'ʦ'), ('dz', 'ʣ')):
         ph = ph.replace(a, b)
+    for k, v in FONEMI.items():
+        ph = ph.replace(k, v)
     return ''.join(c for c in ph if c in VOCAB).strip()
 
 sess = ort.InferenceSession(f'{DL}/kokoro-v1.0.onnx', providers=['CPUExecutionProvider'])
