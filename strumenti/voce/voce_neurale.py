@@ -39,7 +39,9 @@ FONEMI = {'sˈeɡwimi': 'sˈeɡuimi'}
 
 # s sorda tra vocali (pronuncia standard), parola -> fonemi corretti
 # pronunce scelte da Davide a orecchio (30/10/2026): «cosa» con o aperta e s come in «rosa»
-S_SORDA = {'cosa': 'kˈɔza', 'cose': 'kˈɔze'}
+S_SORDA = {'cosa': 'kˈɔza', 'cose': 'kˈɔze',
+           'controllali': 'kontrˈɔllali', 'controllalo': 'kontrˈɔllalo', 'controllala': 'kontrˈɔllala', 'controllale': 'kontrˈɔllale',
+           'automi': 'autˈɔmi', 'autòmi': 'autˈɔmi', 'automa': 'autˈɔma'}
 ACCENTATE = 'àèéìòóù'
 ATONE = set('il lo la i gli le l un uno una un di a da in con su per tra fra e ed o ma che non mi ti ci vi si ne se '
             'del dello della dei degli delle al allo alla ai agli alle dal dallo dalla dai dagli dalle nel nello nella nei negli nelle '

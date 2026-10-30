@@ -36,3 +36,5 @@ AGGIORNAMENTO PRONUNCIA (30/10/2026, approvato da Davide sui campioni)
 - «cosa» = kˈɔza (o aperta, s come in «rosa»), scelta a orecchio da Davide. «ancora» va bene così.
 - Controllo automatico: orecchio.py (Whisper small ONNX, modello da github.com/k2-fsa/sherpa-onnx releases asr-models)
   riscrive l'audio generato e lo confronta col copione; le differenze vanno controllate prima di consegnare.
+- 31/10/2026: controllali = contròllali, automi = autòmi (approvati). Chiusura dei Reel: "Seguimi per il prossimo congegno, arriva presto."
+  (senza virgola dopo «seguimi»: con la pausa la i finale sembrava accentata).
