@@ -32,10 +32,39 @@ def ipa(chunk):
     return ' '.join(out)
 
 # parole da pronunciare in modo speciale (nomi stranieri, sigle)
-LESSICO = {'Edwin Arc': 'Èduin Ark', 'Edwin': 'Èduin', 'Arc': 'Ark', 'IA': 'i a', "l'IA": "l'i a", '1889': 'milleottocentottantanòve'}
+LESSICO = {'Claude': 'Clòd', 'chat': 'ciàt', 'file': 'fàil', 'email': 'imèil', 'e-mail': 'imèil', 'password': 'pàssuord', 'online': 'onlàin', 'Instagram': 'Ìnstagram', 'instagram': 'ìnstagram', 'Edwin Arc': 'Èduin Ark', 'Edwin': 'Èduin', 'Arc': 'Ark', 'IA': 'i a', "l'IA": "l'i a", '1889': 'milleottocentottantanòve'}
 
 # correzioni dirette sui fonemi (dopo espeak)
 FONEMI = {'sˈeɡwimi': 'sˈeɡuimi'}
+
+# s sorda tra vocali (pronuncia standard), parola -> fonemi corretti
+# pronunce scelte da Davide a orecchio (30/10/2026): «cosa» con o aperta e s come in «rosa»
+S_SORDA = {'cosa': 'kˈɔza', 'cose': 'kˈɔze'}
+ACCENTATE = 'àèéìòóù'
+ATONE = set('il lo la i gli le l un uno una un di a da in con su per tra fra e ed o ma che non mi ti ci vi si ne se '
+            'del dello della dei degli delle al allo alla ai agli alle dal dallo dalla dai dagli dalle nel nello nella nei negli nelle '
+            'sul sullo sulla sui sugli sulle col coi me te ce ve'.split())
+PREP = set('a da di in con su per tra fra'.split())
+
+
+def word_ipa(w):
+    lw = w.lower()
+    if lw in ATONE:
+        return ipa(w).strip().replace('ˈ', '').replace('ˌ', '').replace('ː', '').replace('ɛ', 'e').replace('ɔ', 'o')
+    if lw in S_SORDA:
+        return S_SORDA[lw]
+    ph = ipa(w).strip()
+    # parole tronche (con l'accento sull'ultima vocale): accento principale, così non si attaccano alla parola dopo
+    if lw and lw[-1] in ACCENTATE:
+        ph = ph.replace('ˌ', '')
+        if 'ˈ' not in ph:
+            vow = [i for i, c in enumerate(ph) if c in 'aeiouɛɔ']
+            if vow:
+                i = vow[-1]
+                ph = ph[:i] + 'ˈ' + ph[i:]
+        if lw in ('è',):
+            ph = 'ˈɛ'
+    return ph
 
 def phonemize(text):
     for k, v in sorted(LESSICO.items(), key=lambda kv: -len(kv[0])):
@@ -48,7 +77,21 @@ def phonemize(text):
         if p in '.,;:!?…':
             ph = ph.rstrip() + p + ' '
         else:
-            ph += ipa(p.strip()) + ' '
+            # parola per parola: ogni parola ha il suo spazio e il suo accento
+            toks = re.findall(r"[\w']+|[^\w\s]", p.strip())
+            ws = []
+            prev = ''
+            for t in toks:
+                if t.lower() in ('me', 'te', 'sé', 'lui', 'lei', 'noi', 'voi', 'loro') and prev in PREP:
+                    ws.append(ipa(t).strip()); prev = t.lower(); continue
+                prev = t.lower()
+                if "'" in t and not t.endswith("'"):
+                    a, b = t.split("'", 1)
+                    ws.append(ipa(a + "'" + b).strip())
+                else:
+                    ws.append(word_ipa(t))
+            ph += ' '.join(x for x in ws if x) + ' '
+    ph = re.sub(r'\([a-z\-]+\)', '', ph)   # toglie i cambi di lingua di espeak, es. (en)...(it)
     ph = ph.replace('ʊ', 'u').replace('ɪ', 'i')
     # affricate come un solo suono (evita la 't' in più, es. artifi-T-ciale)
     for a, b in (('tʃ', 'ʧ'), ('dʒ', 'ʤ'), ('ts', 'ʦ'), ('dz', 'ʣ')):

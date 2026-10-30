@@ -26,3 +26,13 @@ REGOLE DI SCRITTURA DEI TESTI (Reel 2, 28/10/2026)
 Post-produzione: aresample 44100, silenceremove iniziale, loudnorm I=-16
 
 Script: voce_neurale.py
+
+AGGIORNAMENTO PRONUNCIA (30/10/2026, approvato da Davide sui campioni)
+- Fonemi preparati parola per parola: niente parole attaccate.
+- Parole tronche (è, perché, più, così...) sempre con accento pieno; articoli e preposizioni senza accento.
+- Pronomi dopo preposizione con accento (a te, per me); possessivi con accento (tuo, mio).
+- Tolti i cambi di lingua di espeak "(en)...(it)" che facevano dire "en".
+- Lessico: Claude -> Clòd, chat -> ciàt, file -> fàil, email -> imèil, password -> pàssuord, online -> onlàin, Instagram -> Ìnstagram.
+- «cosa» = kˈɔza (o aperta, s come in «rosa»), scelta a orecchio da Davide. «ancora» va bene così.
+- Controllo automatico: orecchio.py (Whisper small ONNX, modello da github.com/k2-fsa/sherpa-onnx releases asr-models)
+  riscrive l'audio generato e lo confronta col copione; le differenze vanno controllate prima di consegnare.
