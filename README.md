@@ -18,3 +18,16 @@ In ogni cartella di riga:
 - `storia_rigaR.mp4` (storia «nuovi congegni»), `testi_rigaR.txt` (didascalie Instagram e TikTok)
 
 `media/griglia_stagione1.png`: anteprima della griglia completa della stagione 1.
+
+## Second brain (Obsidian)
+
+Il repository è anche un vault di Obsidian: apri la cartella `Edwin-media` con «Apri cartella come vault» e parti da `brain/Home.md`.
+
+- `brain/00 Inbox` — cattura veloce di idee (le note nuove finiscono qui)
+- `brain/Progetti` — Stagione 1 (con una nota per riga) e Stagione 2
+- `brain/Aree` — Edwin Arc, voce, stile dei testi, crescita del profilo
+- `brain/Risorse` — banca delle idee, prompt, strumenti
+- `brain/Contenuti` — una nota per ogni Reel e carosello, con copertina, file, didascalie e spazio per i risultati
+- `brain/Diario`, `brain/Templates`, `brain/Archivio`
+
+Per le tabelle automatiche installa il plugin della community **Dataview**.
