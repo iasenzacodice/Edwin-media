@@ -1,0 +1,6 @@
+{
+  "folder": "brain/Diario",
+  "format": "YYYY-MM-DD",
+  "template": "brain/Templates/Template Giornaliera",
+  "autorun": false
+}
