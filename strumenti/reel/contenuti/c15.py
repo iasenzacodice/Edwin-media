@@ -1,0 +1,12 @@
+NUM = 15
+TITOLO = ('Cosa non', "scrivere all'IA")
+ICONA = '<rect x="-58" y="-36" width="84" height="58" rx="6" fill="#fff" stroke="#2A1E16" stroke-width="4"/><rect x="-50" y="-26" width="22" height="26" fill="#C8B89A"/><line x1="-22" y1="-20" x2="16" y2="-20" stroke="#2A1E16" stroke-width="5"/><line x1="-22" y1="-8" x2="12" y2="-8" stroke="#2A1E16" stroke-width="5"/>\n<path d="M20 -6 V-22 a16 16 0 0 1 32 0 V-6" stroke="#2A1E16" stroke-width="7" fill="none"/><rect x="12" y="-6" width="48" height="44" rx="6" fill="#DCA24A" stroke="#2A1E16" stroke-width="4"/><circle cx="36" cy="12" r="6" fill="#2A1E16"/>'
+SCENE = [
+ dict(panel=[('title2', 'Ti fidi', 'e scrivi tutto?'), ('body', 'Alcuni dati è meglio non scriverli mai, a nessuna IA.')], voce='Ti fidi e scrivi tutto? Alcuni dati è meglio non scriverli mai, a nessuna intelligenza artificiale. Ecco le quattro regole.'),
+ dict(panel=[('label', 'Regola 1'), ('title', 'Password e codici'), ('example', 'Meglio così', 'Non riesco a entrare nel mio conto online. Cosa posso controllare?')], voce='Prima, niente password né codici segreti. Nessun servizio serio te li chiede in chat. Scrivi solo che non riesci a entrare e chiedi cosa controllare.'),
+ dict(panel=[('label', 'Regola 2'), ('title', 'Documenti e carte'), ('example', 'Meglio così', 'Ti mando il contratto con i miei dati coperti. Spiegami la clausola 4.')], voce='Seconda, documenti e carte. Prima di mandare la foto di un contratto o di una tessera, copri i numeri. Bastano due righe nere.'),
+ dict(panel=[('label', 'Regola 3'), ('title', 'I dati degli altri'), ('example', 'Meglio così', 'Un mio collega mi interrompe sempre in riunione. Come gliene parlo?')], voce='Terza, i dati degli altri. Per aiutarti con un collega difficile, non mi serve il suo nome.'),
+ dict(panel=[('label', 'Regola 4'), ('title', 'Segreti di lavoro'), ('example', 'Meglio così', 'Scrivimi una mail di sollecito per un cliente, con nomi inventati.')], voce='Quarta, i segreti di lavoro. Usa nomi inventati e segui le regole della tua azienda. Nel dubbio, chiedi al tuo responsabile.'),
+ dict(panel=[('label', "La regola d'oro"), ('title', 'Togli, poi chiedi'), ('example', 'Così sì', 'Lo scriverei su una cartolina? Se no, lo tolgo o lo cambio.')], voce="La regola d'oro, prima di inviare chiediti se lo scriveresti su una cartolina. Se no, toglilo o cambialo. Ti aiuto benissimo anche così."),
+ dict(panel=[('cta',)], voce='Seguimi per il prossimo congegno, arriva presto.'),
+]

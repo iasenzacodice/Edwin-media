@@ -1,0 +1,12 @@
+NUM = 17
+TITOLO = ('Il curriculum', 'in 4 passi')
+ICONA = '<rect x="-40" y="-52" width="80" height="104" fill="#fff" stroke="#2A1E16" stroke-width="4"/><rect x="-30" y="-42" width="22" height="26" fill="#C8B89A"/><line x1="-2" y1="-36" x2="30" y2="-36" stroke="#2A1E16" stroke-width="4"/><line x1="-2" y1="-24" x2="24" y2="-24" stroke="#8C7350" stroke-width="3"/>\n<rect x="-30" y="-6" width="60" height="7" fill="#B45A30"/><line x1="-30" y1="12" x2="30" y2="12" stroke="#8C7350" stroke-width="3"/><line x1="-30" y1="24" x2="24" y2="24" stroke="#8C7350" stroke-width="3"/><line x1="-30" y1="36" x2="28" y2="36" stroke="#8C7350" stroke-width="3"/>\n<path d="M46 -30 l6 12 13 2 -9 9 2 13 -12 -6 -12 6 2 -13 -9 -9 13 -2 Z" fill="#E3B657" stroke="#2A1E16" stroke-width="3"/>'
+SCENE = [
+ dict(panel=[('title2', 'Il curriculum', 'ti blocca?'), ('chips', ['Esperienze', 'Competenze'])], voce='Il curriculum ti blocca? Foglio bianco e mille dubbi. Tu racconti, io do la forma, in quattro passi.'),
+ dict(panel=[('label', 'Passo 1'), ('title', 'Raccontami cosa hai fatto'), ('example', 'Ad esempio', 'Ho lavorato 8 anni in un magazzino, gestivo le consegne e 3 colleghi.')], voce='Primo, raccontami cosa hai fatto, anche in disordine. Ad esempio, otto anni in magazzino, gestivo le consegne e tre colleghi. Scrivi come parli.'),
+ dict(panel=[('label', 'Passo 2'), ('title', 'Dimmi che lavoro cerchi'), ('example', 'Ad esempio', "Mi candido come responsabile di magazzino. Ecco l'annuncio.")], voce="Secondo, dimmi che lavoro cerchi e incolla l'annuncio. Il curriculum giusto dipende da lì."),
+ dict(panel=[('label', 'Passo 3'), ('title', 'Trova i tuoi punti forti'), ('example', 'Ad esempio', 'Quali mie esperienze contano di più per questo lavoro?')], voce='Terzo, trova i tuoi punti forti. Spesso le cose che dai per scontate valgono tanto, te le faccio notare io.'),
+ dict(panel=[('label', 'Passo 4'), ('title', 'Chiedi la versione finale'), ('example', 'Ad esempio', 'Ora scrivimi il curriculum in una pagina, chiaro e ordinato.')], voce='Quarto, chiedi la versione finale, chiara e di una pagina. Date e nomi delle aziende controllali tu.'),
+ dict(panel=[('label', 'Da ricordare'), ('title', 'Deve essere vero'), ('body', 'Niente esperienze o titoli inventati: al colloquio ti chiederanno tutto.')], voce='Ricorda, il curriculum deve essere vero, al colloquio ti chiederanno tutto. Io ti aiuto a raccontare bene la verità.'),
+ dict(panel=[('cta',)], voce='Seguimi per il prossimo congegno, arriva presto.'),
+]

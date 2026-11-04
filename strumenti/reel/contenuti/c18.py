@@ -1,0 +1,12 @@
+NUM = 18
+TITOLO = ('Il budget', 'del mese')
+ICONA = '<ellipse cx="-14" cy="6" rx="38" ry="28" fill="#E8A0A0" stroke="#2A1E16" stroke-width="4"/><circle cx="22" cy="0" r="12" fill="#E8A0A0" stroke="#2A1E16" stroke-width="4"/><rect x="-30" y="28" width="9" height="14" fill="#E8A0A0" stroke="#2A1E16" stroke-width="3"/><rect x="0" y="28" width="9" height="14" fill="#E8A0A0" stroke="#2A1E16" stroke-width="3"/>\n<circle cx="-14" cy="-38" r="12" fill="#E3B657" stroke="#2A1E16" stroke-width="3"/><text x="-14" y="-33" font-family="Lora" font-weight="700" font-size="15" text-anchor="middle" fill="#2A1E16">€</text>\n<rect x="44" y="0" width="10" height="40" fill="#C08A3E"/><rect x="58" y="-16" width="10" height="56" fill="#2f8a83"/><rect x="72" y="-36" width="10" height="76" fill="#B3261E"/>'
+SCENE = [
+ dict(panel=[('title2', 'A fine mese i soldi', 'spariscono?'), ('chips', ['Entrate', 'Spese'])], voce='A fine mese i soldi spariscono? Elencami le spese e le metto in ordine in una tabella che si capisce al volo.'),
+ dict(panel=[('label', 'Passo 1'), ('title', 'Scrivi entrate e spese'), ('example', 'Ad esempio', 'Entrano 1.800 euro. Affitto 650, spesa 400, bollette 150, auto 200.')], voce='Primo, scrivi entrate e spese, anche a memoria. Ad esempio, entrano milleottocento euro, affitto seicentocinquanta, spesa quattrocento.'),
+ dict(panel=[('label', 'Passo 2'), ('title', 'Chiedi una tabella'), ('example', 'Ad esempio', 'Mettimi tutto in una tabella divisa per categorie, con il totale.')], voce='Secondo, chiedi una tabella divisa per categorie, con i totali. Se vuoi, diventa un foglio di calcolo da scaricare.'),
+ dict(panel=[('label', 'Passo 3'), ('title', 'Guarda dove vanno i soldi'), ('example', 'Ad esempio', 'Quale categoria pesa di più? Fammi un grafico semplice.')], voce='Terzo, guarda dove vanno i soldi con un grafico semplice. Un grafico vale più di cento numeri.'),
+ dict(panel=[('label', 'Passo 4'), ('title', 'Chiedi idee per risparmiare'), ('example', 'Ad esempio', 'Dammi 5 idee concrete per spendere meno sulla spesa.')], voce='Quarto, chiedi cinque idee concrete per risparmiare, pensate per le tue spese. Idee pratiche, niente prediche.'),
+ dict(panel=[('label', 'Da ricordare'), ('title', 'I conti sono tuoi'), ('body', 'Ricontrolla sempre i totali. Per investimenti, prestiti e tasse parla con un consulente.')], voce='Ricontrolla sempre i totali. Per investimenti, prestiti e tasse, parla con un consulente.'),
+ dict(panel=[('cta',)], voce='Seguimi per il prossimo congegno, arriva presto.'),
+]

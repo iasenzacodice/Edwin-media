@@ -1,0 +1,16 @@
+NUM = 11
+TITOLO = ('Correggimi', 'senza paura')
+SET = ('officina', '')
+POSA = 'banco'
+EDWIN_X = 560
+DIETRO = ''
+DAVANTI = '<g transform="translate(250 1440) rotate(-3)"><rect x="-110" y="-70" width="220" height="70" fill="#F7F0E0" stroke="#2A1E16" stroke-width="5"/><line x1="-90" y1="-50" x2="60" y2="-50" stroke="#8C7350" stroke-width="5"/><line x1="-90" y1="-32" x2="80" y2="-32" stroke="#B3261E" stroke-width="5"/><line x1="-90" y1="-14" x2="40" y2="-14" stroke="#8C7350" stroke-width="5"/><text x="60" y="-12" font-family="Lora" font-style="italic" font-size="26" fill="#B3261E">v2</text></g><g transform="translate(880 1350) rotate(28)"><rect x="-20" y="-150" width="40" height="230" fill="#E3B657" stroke="#2A1E16" stroke-width="5"/><path d="M-20 80 L0 125 L20 80 Z" fill="#F3E9D2" stroke="#2A1E16" stroke-width="5"/><rect x="-20" y="-150" width="40" height="34" fill="#B45A30" stroke="#2A1E16" stroke-width="5"/></g>'
+SCENE = [
+ dict(panel=[('title2', 'La prima risposta', 'non ti convince?'), ('img', '<g transform="translate(390 98) scale(1.45)"><rect x="-46" y="-50" width="70" height="92" fill="#fff" stroke="#2A1E16" stroke-width="4"/>\n<line x1="-36" y1="-30" x2="12" y2="-30" stroke="#8C7350" stroke-width="4"/><line x1="-36" y1="-14" x2="14" y2="-14" stroke="#B3261E" stroke-width="4"/>\n<line x1="-36" y1="2" x2="6" y2="2" stroke="#8C7350" stroke-width="4"/><line x1="-36" y1="18" x2="10" y2="18" stroke="#8C7350" stroke-width="4"/>\n<g transform="rotate(38 20 0)"><rect x="12" y="-58" width="20" height="92" fill="#E3B657" stroke="#2A1E16" stroke-width="4"/>\n<path d="M12 34 L22 54 L32 34 Z" fill="#F3E9D2" stroke="#2A1E16" stroke-width="4"/><rect x="12" y="-58" width="20" height="14" fill="#B45A30" stroke="#2A1E16" stroke-width="4"/></g></g><text x="540" y="136" font-family="Lora" font-weight="700" font-size="96" fill="#B3261E">?</text>', 190)], voce="La prima risposta dell'IA non ti convince? Non ricominciare da capo, la sistemiamo insieme."),
+ dict(panel=[('label', 'Richiesta a Edwin'), ('typed', 'Scrivimi un messaggio per disdire la palestra.')], voce='Mettiamo che tu mi chieda un messaggio per disdire la palestra.'),
+ dict(panel=[('label', 'Prima versione', 'esempio inventato'), ('body', 'Gentile direzione, con la presente desidero comunicare la mia volontà di recedere dal contratto in essere.')], voce='Ecco la prima versione. Troppo formale? Nessun problema, dimmi cosa non va.'),
+ dict(panel=[('label', 'Chiedimi ancora'), ('body', 'Cosa cambio?'), ('buttons', ['Più breve e più gentile', 'Cambia solo il finale', 'Dammi tre versioni'], 0)], voce='Puoi chiedermela più breve e più gentile, cambiare solo una parte, oppure farti dare tre versioni e scegliere.'),
+ dict(panel=[('label', 'Seconda versione', 'esempio inventato'), ('body', "Ciao, dal mese prossimo vorrei disdire l'abbonamento. Grazie di tutto, è stato bello allenarmi da voi.")], voce='Due giri e il testo è tuo. E se una parola non ti è chiara, chiedimi di spiegartela.'),
+ dict(panel=[('label', 'Da sapere'), ('body', 'Resta nella stessa conversazione: così ricordo quello che ci siamo detti.'), ('stamp', 'Correggere è normale')], voce='Resta nella stessa conversazione, così ricordo quello che ci siamo detti. Correggere è normale, anche per me.'),
+ dict(panel=[('cta',)], voce='Seguimi per il prossimo congegno, arriva presto.', posa='saluta'),
+]

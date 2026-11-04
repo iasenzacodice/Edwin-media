@@ -1,0 +1,12 @@
+NUM = 11
+TITOLO = ('Correggimi', 'senza paura')
+ICONA = '<rect x="-46" y="-50" width="70" height="92" fill="#fff" stroke="#2A1E16" stroke-width="4"/>\n<line x1="-36" y1="-30" x2="12" y2="-30" stroke="#8C7350" stroke-width="4"/><line x1="-36" y1="-14" x2="14" y2="-14" stroke="#B3261E" stroke-width="4"/>\n<line x1="-36" y1="2" x2="6" y2="2" stroke="#8C7350" stroke-width="4"/><line x1="-36" y1="18" x2="10" y2="18" stroke="#8C7350" stroke-width="4"/>\n<g transform="rotate(38 20 0)"><rect x="12" y="-58" width="20" height="92" fill="#E3B657" stroke="#2A1E16" stroke-width="4"/>\n<path d="M12 34 L22 54 L32 34 Z" fill="#F3E9D2" stroke="#2A1E16" stroke-width="4"/><rect x="12" y="-58" width="20" height="14" fill="#B45A30" stroke="#2A1E16" stroke-width="4"/></g>'
+SCENE = [
+ dict(panel=[('title2', 'La prima risposta', 'non ti convince?'), ('chips', ['Correggila', 'Ricomincio?'])], voce="La prima risposta dell'IA non ti convince? Non ricominciare da capo, ti mostro come correggerla in quattro passi."),
+ dict(panel=[('label', 'Passo 1'), ('title', 'Dimmi cosa non va'), ('example', 'Ad esempio', 'Il tono è troppo formale. Scrivila come se parlassi a un amico.')], voce='Primo, dimmi cosa non va. Ad esempio, il tono è troppo formale, scrivila come se parlassi a un amico. Più sei preciso, meglio correggo.'),
+ dict(panel=[('label', 'Passo 2'), ('title', 'Cambia una parte sola'), ('example', 'Ad esempio', "Lascia tutto com'è, cambia solo il finale.")], voce="Secondo, cambia una parte sola. Dimmi di lasciare tutto com'è e cambiare solo il finale, così non perdi le parti che ti piacevano."),
+ dict(panel=[('label', 'Passo 3'), ('title', 'Chiedi più versioni'), ('example', 'Ad esempio', 'Dammi tre versioni: una seria, una simpatica e una breve.')], voce='Terzo, chiedi più versioni, una seria, una simpatica e una breve. Poi scegli tu, oppure le mescoliamo.'),
+ dict(panel=[('label', 'Passo 4'), ('title', 'Fatti spiegare'), ('example', 'Ad esempio', 'Cosa vuol dire «recesso»? Spiegamelo con un esempio.')], voce='Quarto, fatti spiegare. Se una parola come recesso non ti è chiara, chiedimi un esempio. Nessuna domanda è troppo semplice.'),
+ dict(panel=[('label', 'Da ricordare'), ('title', 'Resta nella stessa conversazione'), ('body', 'Se cambi argomento, aprine una nuova.'), ('stamp', 'Correggere è normale')], voce='Resta nella stessa conversazione, così ricordo quello che ci siamo detti. Correggere è normale, anche per me.'),
+ dict(panel=[('cta',)], voce='Seguimi per il prossimo congegno, arriva presto.'),
+]
