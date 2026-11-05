@@ -1,0 +1,18 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Viaggio in auto</title>
+<style>body{margin:0;font-family:Inter,sans-serif;background:#2f8a83;color:#2A1E16;min-height:100vh}
+h1{color:#fff;font-family:Lora,serif;font-size:28px;margin:0;padding:26px 20px 4px}.s{color:#d8efeb;padding:0 20px 14px}
+.c{background:#FBF7EC;border-radius:24px 24px 0 0;padding:18px 18px 30px;min-height:80vh}
+label{display:flex;justify-content:space-between;align-items:center;background:#fff;border-radius:14px;padding:12px 14px;margin:9px 0;font-size:16px}
+input{width:92px;font:700 19px Inter;text-align:right;border:0;background:#F3EEE4;border-radius:10px;padding:8px}
+.r{background:#2A1E16;color:#fff;border-radius:20px;padding:18px;margin-top:16px}.r div{display:flex;justify-content:space-between;padding:4px 0;color:#d9cdb8}
+.r b{color:#fff}.r .big{font-size:36px;color:#E3B657;margin-top:8px}</style></head><body>
+<h1>Quanto costa il viaggio?</h1><div class="s">Benzina, pedaggi e divisione tra amici</div><div class="c">
+<label>Chilometri (andata e ritorno)<input id="km" value="860"></label>
+<label>Consumo (km con un litro)<input id="cons" value="16"></label>
+<label>Prezzo carburante (€/litro)<input id="pr" value="1,79"></label>
+<label>Pedaggi totali (€)<input id="ped" value="58"></label>
+<label>Persone in auto<input id="per" value="4"></label>
+<div class="r"><div><span>Carburante</span><b id="o1"></b></div><div><span>Pedaggi</span><b id="o2"></b></div><div><span>Totale</span><b id="o3"></b></div><div class="big" id="o4"></div></div></div>
+<script>const n=id=>parseFloat(document.getElementById(id).value.replace(',','.'))||0,e=v=>v.toLocaleString('it-IT',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';
+function calc(){const f=n('km')/n('cons')*n('pr'),t=f+n('ped');o1.textContent=e(f);o2.textContent=e(n('ped'));o3.textContent=e(t);o4.textContent=e(t/n('per'))+' a testa'}
+document.querySelectorAll('input').forEach(i=>i.oninput=calc);if(location.hash=='#3'){per.value=3}calc()</script></body></html>

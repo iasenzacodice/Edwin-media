@@ -1,0 +1,13 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><title>Slide</title>
+<style>body{margin:0;background:#1d2b3a;font-family:Inter,sans-serif;color:#2A1E16;height:100vh;display:grid;place-items:center}
+.s{width:1280px;height:800px;background:#FBF7EC;position:relative;overflow:hidden}.s h1{font-family:Lora,serif;font-size:72px;margin:0}
+.t1{display:flex;flex-direction:column;justify-content:center;padding:0 110px;height:100%;background:linear-gradient(120deg,#FBF7EC 60%,#E9DFCB 60%)}
+.t1 p{font-size:28px;color:#7a6a58}.tag{display:inline-block;background:#B3261E;color:#fff;font-weight:700;padding:8px 16px;border-radius:8px;margin-bottom:20px;font-size:20px;width:max-content}
+.t2{padding:70px 100px}.t2 h1{font-size:52px}.row{display:flex;align-items:flex-end;gap:40px;height:420px;margin-top:40px;border-bottom:4px solid #2A1E16}
+.b{width:150px;border-radius:12px 12px 0 0;position:relative;transform-origin:bottom;animation:g 1s ease-out both}.b span{position:absolute;top:-46px;left:0;right:0;text-align:center;font:700 30px Inter}
+.b i{position:absolute;bottom:-46px;left:-20px;right:-20px;text-align:center;font-style:normal;font-size:22px;color:#5a4a38}
+@keyframes g{from{transform:scaleY(0)}}.n{position:absolute;right:40px;bottom:30px;color:#9a8a76}.arrow{position:absolute;right:110px;top:190px;font:700 26px Inter;color:#2f8a83}</style></head><body>
+<div class="s" id="s"></div>
+<script>const A=`<div class="t1"><span class="tag">ASSEMBLEA DI CONDOMINIO</span><h1>Il nuovo cortile</h1><p>Tre proposte, i costi e cosa cambia per ognuno</p></div><div class="n">1 / 8</div>`;
+const B=`<div class="t2"><h1>Quanto costa a ogni famiglia</h1><div class="row">${[["Solo pulizia",40,'#C8B89A'],["Verde e panchine",95,'#DCA24A'],["Tutto nuovo",180,'#B45A30']].map((x,i)=>`<div class="b" style="height:${x[1]*2}px;background:${x[2]};animation-delay:${i*.3}s"><span>${x[1]} €</span><i>${x[0]}</i></div>`).join('')}</div></div><div class="arrow">← la più votata in chat</div><div class="n">4 / 8</div>`;
+s.innerHTML=location.hash=='#2'?B:A;</script></body></html>

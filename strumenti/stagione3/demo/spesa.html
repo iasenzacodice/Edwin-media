@@ -1,0 +1,18 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Spesa</title>
+<style>body{margin:0;font-family:Inter,sans-serif;background:#FBF7EC;color:#2A1E16}
+header{background:#B45A30;color:#fff;padding:26px 20px 18px}h1{font-family:Lora,serif;margin:0;font-size:30px}.saved{display:inline-block;margin-top:8px;background:#ffffff30;border-radius:20px;padding:5px 12px;font-size:14px}
+.add{display:flex;gap:8px;padding:16px}.add input{flex:1;font:17px Inter;padding:13px;border-radius:14px;border:2px solid #E2D6BF}.add button{border:0;background:#2A1E16;color:#fff;font:700 22px Inter;width:52px;border-radius:14px}
+h2{font-size:14px;letter-spacing:2px;color:#9C4A26;margin:14px 20px 4px}
+.it{display:flex;align-items:center;gap:12px;background:#fff;margin:8px 16px;border-radius:14px;padding:13px 14px;font-size:17px}.it .b{width:26px;height:26px;border-radius:8px;border:3px solid #2A1E16}
+.it.ok{color:#a99a86;text-decoration:line-through}.it.ok .b{background:#2f8a83;border-color:#2f8a83}.it .q{margin-left:auto;color:#7a6a58;font-size:15px}</style></head><body>
+<header><h1>La spesa di casa</h1><div class="saved" id="sv">✓ Salvata · la ritrovi anche domani</div></header>
+<div class="add"><input placeholder="Aggiungi qualcosa…" id="in"><button onclick="add()">+</button></div><div id="l"></div>
+<script>
+let D;try{D=JSON.parse(localStorage.getItem('spesa'))}catch(e){}
+D=D||{"FRUTTA E VERDURA":[["Mele","1 kg",1],["Zucchine","4",0],["Basilico","",0]],"FRIGO":[["Latte","2",0],["Mozzarella","3",1]],"CASA":[["Detersivo piatti","",0]]};
+if(location.hash=='#nuovo'){D["FRIGO"].push(["Yogurt greco","4",0])}
+function save(){try{localStorage.setItem('spesa',JSON.stringify(D))}catch(e){}}
+function draw(){l.innerHTML=Object.entries(D).map(([g,a])=>`<h2>${g}</h2>`+a.map((x,i)=>`<div class="it ${x[2]?'ok':''}" onclick="D['${g}'][${i}][2]^=1;save();draw()"><div class="b"></div>${x[0]}<span class="q">${x[1]}</span></div>`).join('')).join('')}
+function add(){const v=document.getElementById('in').value.trim();if(v){D["CASA"].push([v,"",0]);save();draw()}}
+draw();
+</script></body></html>

@@ -1,0 +1,18 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Casa in numeri</title>
+<style>body{margin:0;font-family:Inter,sans-serif;background:#F3EEE4;color:#2A1E16;padding:26px 34px}
+h1{font-family:Lora,serif;margin:0;font-size:32px}.sub{color:#7a6a58;margin:4px 0 20px}
+.k{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.kp{background:#fff;border-radius:18px;padding:16px 18px;box-shadow:0 2px 0 #e2d6bf}
+.kp span{color:#7a6a58;font-size:14px}.kp b{display:block;font-size:30px;margin-top:6px}.kp i{font-style:normal;font-size:13px;font-weight:700}.up{color:#B3261E}.dn{color:#2f8a83}
+.g{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:16px}.pn{background:#fff;border-radius:18px;padding:18px;box-shadow:0 2px 0 #e2d6bf}.pn h3{margin:0 0 10px;font-size:16px}
+</style></head><body>
+<h1>Casa in numeri</h1><div class="sub">Bollette e auto · aggiornato a dicembre 2026</div>
+<div class="k"><div class="kp"><span>Spesa totale 2026</span><b>4.318 €</b><i class="dn">▼ 6% sul 2025</i></div><div class="kp"><span>Luce (media mese)</span><b>78 €</b><i class="dn">▼ 11%</i></div><div class="kp"><span>Gas (media mese)</span><b>96 €</b><i class="up">▲ 4%</i></div><div class="kp"><span>Carburante</span><b>142 €</b><i class="dn">▼ 3%</i></div></div>
+<div class="g"><div class="pn"><h3>Spesa per mese</h3><svg viewBox="0 0 620 260" width="100%" id="bars"></svg></div>
+<div class="pn"><h3>Dove vanno i soldi</h3><svg viewBox="0 0 360 260" width="100%" id="dist"></svg></div></div>
+<script>
+const M=[412,398,356,301,268,240,262,281,295,330,401,454],L='GFMAMGLASOND';
+let s='';M.forEach((v,i)=>{const h=v/460*200,x=20+i*49;s+=`<rect x="${x}" y="${220-h}" width="34" height="${h}" rx="6" fill="${i==11?'#B3261E':(i<3||i>9?'#DCA24A':'#2f8a83')}"/><text x="${x+17}" y="246" text-anchor="middle" font-size="14" fill="#7a6a58">${L[i]}</text>`});
+s+=`<text x="${20+11*49+17}" y="${220-454/460*200-8}" text-anchor="middle" font-size="14" font-weight="700" fill="#B3261E">454 €</text>`;document.getElementById('bars').innerHTML=s;
+const D=[["Gas",1152,'#DCA24A'],["Carburante",1704,'#B45A30'],["Luce",936,'#2f8a83'],["Acqua",312,'#9CC3C9'],["Rifiuti",214,'#C8B89A']].sort((a,b)=>b[1]-a[1]);
+document.getElementById('dist').innerHTML=D.map((d,i)=>`<text x="0" y="${30+i*48}" font-size="15">${d[0]}</text><rect x="100" y="${14+i*48}" width="${d[1]/1704*200}" height="24" rx="6" fill="${d[2]}"/><text x="${110+d[1]/1704*200}" y="${32+i*48}" font-size="14" font-weight="700">${d[1].toLocaleString('it-IT')} €</text>`).join('');
+</script></body></html>

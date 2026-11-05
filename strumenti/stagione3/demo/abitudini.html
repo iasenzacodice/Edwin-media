@@ -1,0 +1,35 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le mie abitudini</title>
+<style>
+:root{--bg:#F6F1E7;--ink:#2A1E16;--teal:#2f8a83;--gold:#E3B657;--soft:#E9DFCB}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+header{padding:28px 22px 10px}h1{font-family:Lora,serif;font-size:30px;margin:0}
+.sub{color:#7a6a58;font-size:15px;margin-top:4px}
+.ring{display:flex;align-items:center;gap:16px;margin:18px 22px;background:#fff;border-radius:22px;padding:16px;box-shadow:0 2px 0 #e2d6bf}
+.ring svg{flex:none}.ring b{font-size:22px}.ring span{display:block;color:#7a6a58;font-size:14px}
+ul{list-style:none;margin:0;padding:0 16px}
+li{display:flex;align-items:center;gap:14px;background:#fff;border-radius:18px;padding:16px;margin:10px 0;box-shadow:0 2px 0 #e2d6bf;font-size:18px}
+li .box{width:34px;height:34px;border-radius:10px;border:3px solid var(--ink);display:grid;place-items:center;flex:none}
+li.done .box{background:var(--teal);border-color:var(--teal)}li.done .box:after{content:"";width:10px;height:18px;border:solid #fff;border-width:0 4px 4px 0;transform:rotate(45deg) translate(-1px,-2px)}
+li .name{flex:1}li.done .name{color:#7a6a58}
+li .streak{font-size:14px;background:var(--soft);border-radius:12px;padding:4px 10px;white-space:nowrap}
+.week{display:flex;justify-content:space-between;margin:18px 22px}.day{width:38px;text-align:center;font-size:12px;color:#7a6a58}
+.dot{width:30px;height:30px;border-radius:50%;margin:6px auto 0;background:var(--soft)}.dot.on{background:var(--gold)}
+.add{display:block;margin:22px auto;border:0;background:var(--ink);color:#fff;font:600 17px Inter;padding:14px 26px;border-radius:30px}</style></head><body>
+<header><h1>Le mie abitudini</h1><div class="sub" id="oggi"></div></header>
+<div class="ring"><svg width="74" height="74" viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" fill="none" stroke="#E9DFCB" stroke-width="10"/><circle id="arc" cx="37" cy="37" r="30" fill="none" stroke="#2f8a83" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 999" transform="rotate(-90 37 37)"/></svg><div><b id="conta">0 su 4</b><span>fatte oggi</span></div></div>
+<ul id="lista"></ul>
+<div class="week" id="sett"></div><button class="add">+ Nuova abitudine</button>
+<script>
+const H=[["Bere 8 bicchieri d'acqua",12],["Camminare 20 minuti",5],["Leggere 10 pagine",9],["A letto entro le 23",3]];
+let fatte=new Set((location.hash.match(/\d/g)||[]).map(Number));
+document.getElementById('oggi').textContent='Lunedì 12 gennaio';
+function draw(){const ul=document.getElementById('lista');ul.innerHTML='';
+H.forEach(([n,s],i)=>{const li=document.createElement('li');if(fatte.has(i))li.className='done';
+li.innerHTML=`<div class="box"></div><div class="name">${n}</div><div class="streak">🔥 ${s+(fatte.has(i)?1:0)} giorni</div>`;
+li.onclick=()=>{fatte.has(i)?fatte.delete(i):fatte.add(i);draw()};ul.appendChild(li)});
+const k=fatte.size;document.getElementById('conta').textContent=k+' su 4';
+document.getElementById('arc').setAttribute('stroke-dasharray',(188.5*k/4)+' 999');
+const g=['M','G','V','S','D','L','Oggi'],on=[1,1,0,1,1,1];document.getElementById('sett').innerHTML=g.map((d,i)=>`<div class="day">${d}<div class="dot ${(i<6?on[i]:k==4)?'on':''}"></div></div>`).join('')}
+draw();
+</script></body></html>

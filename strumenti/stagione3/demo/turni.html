@@ -1,0 +1,15 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Turni di casa</title>
+<style>body{margin:0;font-family:Inter,sans-serif;background:#F3EEE4;color:#2A1E16}
+header{padding:24px 20px 6px}h1{font-family:Lora,serif;margin:0;font-size:30px}.w{display:flex;justify-content:space-between;align-items:center;margin-top:6px;color:#7a6a58}
+.w button{border:0;background:#2A1E16;color:#fff;font:700 14px Inter;padding:9px 14px;border-radius:20px}
+.p{margin:12px 16px;background:#fff;border-radius:20px;padding:14px;box-shadow:0 2px 0 #e2d6bf}.p .h{display:flex;align-items:center;gap:12px;font-weight:800;font-size:19px}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800}.t{display:flex;gap:10px;align-items:center;margin-top:10px;padding:10px;border-radius:12px;background:#FBF7EC;font-size:16px}
+.t i{font-style:normal;font-size:22px}.t.ok{color:#a99a86;text-decoration:line-through}.pt{margin-left:auto;font-size:14px;color:#2f8a83;font-weight:700}</style></head><body>
+<header><h1>Turni di casa</h1><div class="w"><span id="wk">Settimana 12–18 gennaio</span><button onclick="rot()">Ruota →</button></div></header><div id="ps"></div>
+<script>
+const P=[["Giulia","#B3261E"],["Marco","#2f8a83"],["Luca","#DCA24A"]],T=[["🧽","Piatti la sera"],["🧺","Bucato e stendere"],["🗑️","Spazzatura e differenziata"],["🧹","Pavimenti sabato"],["🐕","Passeggiata con Pippo"],["🛒","Spesa del sabato"]];
+let off=location.hash=='#dopo'?1:0;
+function draw(){wk.textContent=off?'Settimana 19–25 gennaio':'Settimana 12–18 gennaio';
+ps.innerHTML=P.map((p,i)=>{const mine=[(i+off)%3,(i+off)%3+3];return `<div class="p"><div class="h"><div class="av" style="background:${p[1]}">${p[0][0]}</div>${p[0]}<span class="pt">${off?'0':[2,1,2][i]} su 2 fatte</span></div>`+mine.map((k,j)=>`<div class="t ${!off&&(j==0||i!=1)?'ok':''}"><i>${T[k][0]}</i>${T[k][1]}</div>`).join('')+'</div>'}).join('')}
+function rot(){off=1-off;draw()}draw();
+</script></body></html>

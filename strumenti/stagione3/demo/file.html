@@ -1,0 +1,10 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><title>File</title>
+<style>body{margin:0;font-family:Inter,sans-serif;background:#F3EEE4;color:#2A1E16;padding:24px 30px}h1{font-family:Lora,serif;margin:0 0 12px;font-size:28px}
+.w{background:#fff;border-radius:16px;padding:8px 14px;box-shadow:0 2px 0 #e2d6bf}.f{display:flex;align-items:center;gap:12px;padding:9px 6px;border-bottom:1px solid #f0e8d8;font-size:16px}
+.ic{width:30px;height:24px;border-radius:5px;flex:none}.f span{margin-left:auto;color:#9a8a76;font-size:13px}.d{font-weight:700}.d .ic{background:#DCA24A}.p .ic{background:#9CC3C9}</style></head><body>
+<h1 id="t"></h1><div class="w" id="l"></div>
+<script>const before=["IMG_4821.JPG","IMG_4822.JPG","WhatsApp Image 2026-07-14 at 18.02.11.jpeg","Scansione_003.pdf","IMG_4823 (1).JPG","DSC00917.JPG","documento(2).pdf","IMG_4830.HEIC","Screenshot 2026-08-02 alle 21.14.33.png","IMG_4831.JPG","DSC00918.JPG"];
+const after=[["📁 2026-07 Mare in Sardegna","84 foto"],["📁 2026-08 Matrimonio di Anna","61 foto"],["📁 2026-09 Montagna","38 foto"],["📁 Documenti","17 PDF"],["📁 Da controllare","5 file"]];
+const sub=["2026-07-14 Sardegna 001.jpg","2026-07-14 Sardegna 002.jpg","2026-07-15 Sardegna 003.jpg"];
+if(location.hash=='#dopo'){t.textContent='Dopo: foto e documenti in ordine';l.innerHTML=after.map(a=>`<div class="f d"><div class="ic"></div>${a[0].slice(2)}<span>${a[1]}</span></div>`).join('')+sub.map(s=>`<div class="f p" style="padding-left:40px"><div class="ic"></div>${s}<span>rinominata</span></div>`).join('')}
+else{t.textContent='Prima: la cartella Download';l.innerHTML=before.map((b,i)=>`<div class="f p"><div class="ic"></div>${b}<span>${['2,4 MB','3,1 MB','480 KB','1,2 MB','2,4 MB','5,6 MB','220 KB','3,3 MB','1,1 MB','2,9 MB','5,2 MB'][i]}</span></div>`).join('')+'<div class="f" style="color:#9a8a76">… e altri 189 file</div>'}</script></body></html>

@@ -1,0 +1,11 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><title>La mia collezione</title>
+<style>body{margin:0;font-family:Inter,sans-serif;background:#F3EEE4;color:#2A1E16;padding:24px 32px}h1{font-family:Lora,serif;margin:0;font-size:30px}
+.bar{display:flex;gap:10px;margin:16px 0}.bar input{flex:1;font:16px Inter;padding:11px 14px;border-radius:12px;border:2px solid #E2D6BF}.ch{padding:10px 14px;border-radius:20px;background:#fff;border:2px solid #E2D6BF;font-weight:600}.ch.on{background:#2A1E16;color:#fff;border-color:#2A1E16}
+.gr{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.c{background:#fff;border-radius:16px;padding:10px;box-shadow:0 2px 0 #e2d6bf}.c b{display:block;margin-top:8px;font-size:14px}.c span{color:#7a6a58;font-size:12px}
+.st{height:120px;border-radius:6px;display:grid;place-items:center;outline:3px dashed #fff;outline-offset:-8px}.n{color:#7a6a58;margin-top:4px}</style></head><body>
+<h1>I francobolli del nonno</h1><div class="n" id="cnt"></div>
+<div class="bar"><input value="" placeholder="Cerca per nome, anno, soggetto…"><span class="ch on">Italia</span><span class="ch">Anni '60</span><span class="ch">Animali</span><span class="ch">Da valutare</span></div>
+<div class="gr" id="g"></div>
+<script>const C=[["Colosseo","1960","#B45A30"],["Vespa","1965","#2f8a83"],["Dante","1965","#7A4A26"],["Gondola","1962","#2E4A62"],["Olimpiadi Roma","1960","#B3261E"],["Ape regina","1968","#DCA24A"],["Duomo di Milano","1963","#6E9E5A"],["Tramonto in Sicilia","1967","#E3B657"],["Treno a vapore","1961","#5A341C"],["Leone di Venezia","1964","#9C4A26"]];
+cnt.textContent='248 pezzi · filtro: Italia → '+C.length+' risultati';
+g.innerHTML=C.map(c=>`<div class="c"><div class="st" style="background:${c[2]}"><svg width="70" height="70" viewBox="0 0 70 70"><circle cx="35" cy="35" r="24" fill="#ffffff55"/><text x="35" y="44" text-anchor="middle" font-family="Lora" font-weight="700" font-size="22" fill="#fff">L.${[25,30,40,50,70][c[1]%5]}</text></svg></div><b>${c[0]}</b><span>${c[1]} · Italia</span></div>`).join('')</script></body></html>

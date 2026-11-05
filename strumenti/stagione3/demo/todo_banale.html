@@ -1,0 +1,4 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>App</title>
+<style>body{font-family:Arial,sans-serif;margin:20px;background:#fff;color:#222}h1{font-size:22px}input{width:65%;padding:8px;font-size:16px}button{padding:8px 12px;font-size:16px}li{margin:8px 0}</style></head>
+<body><h1>La mia app</h1><input id="t" placeholder="Scrivi qualcosa"><button onclick="a()">Aggiungi</button><ul id="l"><li>Cosa 1</li></ul>
+<script>function a(){const v=document.getElementById('t').value;if(v){const li=document.createElement('li');li.textContent=v;document.getElementById('l').appendChild(li)}}</script></body></html>

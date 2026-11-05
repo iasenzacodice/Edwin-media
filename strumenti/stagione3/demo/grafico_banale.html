@@ -1,0 +1,4 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Grafico</title></head><body style="margin:0;font-family:Arial;background:#fff">
+<p style="margin:16px;font-size:18px">Grafico delle spese</p><svg viewBox="0 0 400 400" width="560" style="margin-left:40px" id="p"></svg>
+<script>const v=[412,398,356,301,268,240,262,281,295,330,401,454],c=['#e6194b','#3cb44b','#ffe119','#4363d8','#f58231','#911eb4','#46f0f0','#f032e6','#bcf60c','#fabebe','#008080','#e6beff'];
+let a=0,s='';const t=v.reduce((x,y)=>x+y);v.forEach((x,i)=>{const b=a+x/t*6.283;s+=`<path d="M200 200 L${200+180*Math.cos(a)} ${200+180*Math.sin(a)} A180 180 0 0 1 ${200+180*Math.cos(b)} ${200+180*Math.sin(b)}Z" fill="${c[i]}"/>`;a=b});document.getElementById('p').innerHTML=s</script></body></html>

@@ -1,0 +1,20 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Caccia al tesoro</title>
+<style>body{margin:0;font-family:Inter,sans-serif;background:#2E4A62;color:#2A1E16;min-height:100vh}
+.top{color:#F7F0E0;text-align:center;padding:26px 16px 8px}.top h1{font-family:Lora,serif;margin:0;font-size:30px}.top div{opacity:.8;margin-top:4px}
+.bar{display:flex;gap:8px;justify-content:center;margin:14px}.bar i{width:44px;height:10px;border-radius:5px;background:#ffffff40}.bar i.on{background:#E3B657}
+.card{background:#F7F0E0;margin:16px;border-radius:24px;padding:24px;box-shadow:0 8px 0 #1d2f40}
+.card .n{color:#B3261E;font-weight:800;letter-spacing:2px;font-size:14px}.card h2{font-family:Lora,serif;font-size:27px;line-height:1.25;margin:10px 0 18px}
+.code{display:flex;gap:10px;justify-content:center;margin:12px 0}.code b{width:56px;height:68px;border-radius:14px;background:#fff;border:3px solid #2A1E16;display:grid;place-items:center;font-size:32px}
+.go{display:block;width:100%;border:0;background:#B3261E;color:#fff;font:700 19px Inter;padding:16px;border-radius:16px;margin-top:12px}
+.hint{text-align:center;color:#7a6a58;margin-top:12px;font-size:15px}
+.ok{text-align:center}.ok .big{font-size:70px}.ok h2{color:#2f8a83}</style></head><body>
+<div class="top"><h1>Caccia al tesoro</h1><div>Il compleanno di Sofia · 8 anni</div></div>
+<div class="bar" id="bar"></div>
+<div class="card" id="card"></div>
+<script>
+const I=[["Dove l'acqua scende ma nessuno si bagna, cerca un numero sotto il cestino.","4","7","1"],["Ho le lancette ma non sono un orologio da polso: guarda dietro di me.","2","9","3"]];
+const s=location.hash;const ok=s=='#ok';const n=1;
+document.getElementById('bar').innerHTML=[0,1,2,3,4].map(i=>`<i class="${i<=n-(ok?0:1)+ (ok?0:0)||i<n?'on':''}"></i>`).join('');
+document.getElementById('card').innerHTML=ok?`<div class="ok"><div class="big">🎉</div><h2>Giusto!</h2><p style="font-size:19px">Indizio 3 sbloccato:<br><b>«Dormo di giorno e lavoro di notte, cerca tra i cuscini.»</b></p><button class="go" style="background:#2f8a83">Vai all'indizio 3</button></div>`
+:`<div class="n">INDIZIO 2 DI 5</div><h2>«${I[0][0]}»</h2><div class="code"><b>${I[0][1]}</b><b>${I[0][2]}</b><b>${I[0][3]}</b></div><button class="go">Controlla il codice</button><div class="hint">Bloccati? Aiutino tra 2 minuti</div>`;
+</script></body></html>
