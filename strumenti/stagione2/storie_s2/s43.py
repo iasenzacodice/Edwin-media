@@ -1,0 +1,11 @@
+NUM = 43
+POSA = 'indica'
+EDWIN_X = 470
+SCENE = [
+ dict(panel=[('title2', 'Troppi numeri', 'da spiegare?'), ('body', "Un'infografica dice in un colpo d'occhio quello che una tabella dice in dieci minuti.")], voce="Hai troppi numeri da spiegare? Un'infografica li fa capire in un colpo d'occhio."),
+ dict(panel=[('label', 'Richiesta a Edwin'), ('typed', "Fammi un'infografica sui consumi d'acqua della nostra scuola, da appendere in bacheca.")], voce='Mi dai i dati e mi dici dove andrà. In bacheca a scuola, per esempio.', posa='banco'),
+ dict(panel=[('label', "L'infografica", 'esempio inventato'), ('img', '<rect x="110" y="14" width="700" height="236" rx="12" fill="#fff" stroke="#2A1E16" stroke-width="4"/><text x="140" y="62" font-family="Lora" font-weight="700" font-size="34" fill="#2A1E16">Acqua a scuola</text><text x="140" y="130" font-family="Lora" font-weight="700" font-size="64" fill="#2f8a83">-18%</text><text x="140" y="166" font-family="Inter" font-size="24" fill="#5A341C">in un anno</text><circle cx="470" cy="150" r="72" fill="#2f8a83" stroke="#2A1E16" stroke-width="4"/><path d="M470 150 L470 78 A72 72 0 0 1 538 172 Z" fill="#DCA24A" stroke="#2A1E16" stroke-width="4"/><rect x="590" y="90" width="50" height="140" fill="#B3261E" stroke="#2A1E16" stroke-width="3"/><rect x="660" y="118" width="50" height="112" fill="#B45A30" stroke="#2A1E16" stroke-width="3"/><rect x="730" y="150" width="50" height="80" fill="#2f8a83" stroke="#2A1E16" stroke-width="3"/>', 266)], voce='Io scelgo il grafico giusto, i colori e le frasi chiave. Meno diciotto per cento, scritto bello grande.', x=600),
+ dict(panel=[('chat', 'Chiedimi ancora', [('tu', 'Più grande, da stampare in A3'), ('ed', 'Fatto. Ho ingrandito anche le scritte.')])], voce='Vuoi cambiarla? Lo dici a parole. Più grande, altri colori, una frase in meno.'),
+ dict(panel=[('label', 'Da sapere'), ('body', 'Controlla i numeri: un grafico bellissimo con un dato sbagliato resta sbagliato.'), ('stamp', 'Numeri giusti')], voce='Controlla sempre i numeri. Un grafico bellissimo con un dato sbagliato è solo un errore elegante.', zoom=True),
+ dict(panel=[('cta',)], voce='Seguimi per il prossimo congegno, arriva presto.', posa='saluta'),
+]

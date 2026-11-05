@@ -32,10 +32,10 @@ def ipa(chunk):
     return ' '.join(out)
 
 # parole da pronunciare in modo speciale (nomi stranieri, sigle)
-LESSICO = {'Claude': 'Clòd', 'chat': 'ciàt', 'file': 'fàil', 'email': 'imèil', 'e-mail': 'imèil', 'password': 'pàssuord', 'online': 'onlàin', 'Instagram': 'Ìnstagram', 'instagram': 'ìnstagram', 'Edwin Arc': 'Èduin Ark', 'Edwin': 'Èduin', 'Arc': 'Ark', 'IA': 'i a', "l'IA": "l'i a", '1889': 'milleottocentottantanòve'}
+LESSICO = {'Claude': 'Clòd', 'chat': 'ciàt', 'file': 'fàil', 'email': 'imèil', 'e-mail': 'imèil', 'password': 'pàssuord', 'online': 'onlàin', 'Instagram': 'Ìnstagram', 'instagram': 'ìnstagram', 'Edwin Arc': 'Èduin Ark', 'Edwin': 'Èduin', 'Arc': 'Ark', 'IA': 'i a', "l'IA": "l'i a", '1889': 'milleottocentottantanòve', 'skill': 'schìl', 'Skill': 'Schìl', 'flashcard': 'flèsc card', 'Google Drive': 'Gùgol Dràiv', 'Excel': 'Ècsel', 'PDF': 'pi di èffe', 'web': 'uèb', 'link': 'linc', 'quiz': 'cuìz', 'browser': 'bràuser', 'slide': 'slàid', 'report': 'ripòrt', 'online': 'onlàin', 'Word': 'Uòrd', 'PowerPoint': 'Pàuer Pòint', 'Natale': 'Natàle', 'tutor': 'tùtor', 'come te': 'come té'}
 
 # correzioni dirette sui fonemi (dopo espeak)
-FONEMI = {'sˈeɡwimi': 'sˈeɡuimi'}
+FONEMI = {'sˈeɡwimi': 'sˈeɡuimi', 'flˈɛsk kˈard': 'flˈɛʃ kˈard'}
 
 # s sorda tra vocali (pronuncia standard), parola -> fonemi corretti
 # pronunce scelte da Davide a orecchio (30/10/2026): «cosa» con o aperta e s come in «rosa»
